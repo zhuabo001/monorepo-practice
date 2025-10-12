@@ -1,0 +1,45 @@
+/**
+ * 变更日志配置。
+ *
+ * 文档: https://rushjs.io/pages/configs/changelog_config_json/
+ */
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/changelog_config.schema.json",
+
+  /**
+   * （必需）变更日志文件名。通常设置为 "CHANGELOG.md" 或 "CHANGELOG.json"。
+   */
+  "changelogFileNames": ["CHANGELOG.md"],
+
+  /**
+   * 变更日志条目前缀。通常为空字符串。
+   */
+  "changelogEntryPrefix": "",
+
+  /**
+   * 如果为 true，则在变更日志条目前添加发布日期。
+   */
+  "addDateToChangelogEntries": true,
+
+  /**
+   * 如果为 true，则在变更日志条目前添加作者姓名。
+   */
+  "addAuthorToChangelogEntries": false,
+
+  /**
+   * 变更日志条目模板。
+   */
+  "changelogEntryTemplate": "- {{changeType}}: {{description}}",
+
+  /**
+   * 变更类型模板。
+   */
+  "changeTypeTemplates": {
+    "none": "",
+    "dependency": "Dependency updates",
+    "hotfix": "Hotfix",
+    "bugfix": "Bug fixes",
+    "newFeature": "New features",
+    "breakingChange": "Breaking changes"
+  }
+}

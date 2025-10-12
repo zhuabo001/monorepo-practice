@@ -4,3 +4,19 @@ dist
 .env
 .env.test
 INSTRUCTION.md
+
+# Rush 构建缓存
+common/temp
+common/autoinstallers/*/.npmrc
+**/.rush/temp
+
+# Rush 发布产物
+common/scripts/install-run-rush.js
+common/scripts/install-run-rushx.js
+common/scripts/install-run.js
+
+# 变更文件（这些应该被提交，但有时需要忽略）
+# common/changes/*.json
+
+# Rush 日志
+*.rushlog

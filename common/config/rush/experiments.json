@@ -1,0 +1,28 @@
+/**
+ * 定义 Rush 实验功能。
+ *
+ * 文档: https://rushjs.io/pages/configs/experiments_json/
+ */
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/experiments.schema.json",
+
+  /**
+   * 如果为 true，则启用新的依赖解析器，它使用 npm 的 Arborist 库。
+   */
+  "legacyIncrementalBuildDependencyDetection": false,
+
+  /**
+   * 如果为 true，则允许在 package.json 中使用 "workspace:*" 协议。
+   */
+  "enableWorkspaceCompatibleInternalVersionProtocol": true,
+
+  /**
+   * 如果为 true，则启用新的构建缓存功能。
+   */
+  "buildCache": false,
+
+  /**
+   * 如果为 true，则启用新的依赖提升功能。
+   */
+  "noChmodFieldInTarHeaderNormalization": true
+}

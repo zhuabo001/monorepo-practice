@@ -1,0 +1,9 @@
+/**
+ * 当 Rush 安装依赖时，此文件指定 "pnpm-sync.json" 的自定义配置。
+ * 此文件是可选的。
+ *
+ * 文档: https://lerna.js.org/docs/api-reference/configuration#publish-config
+ */
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/pnpm-sync-json.schema.json"
+}

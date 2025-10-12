@@ -1,0 +1,50 @@
+/**
+ * Rush 构建缓存配置。
+ *
+ * 文档: https://rushjs.io/pages/maintainer/build_cache/
+ */
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/build-cache.schema.json",
+
+  /**
+   * （必需）构建缓存提供程序。
+   * 目前只支持 "amazon-s3" 和 "azure-blob-storage"。
+   */
+  "buildCacheProvider": "azure-blob-storage",
+
+  /**
+   * （必需）是否启用构建缓存。
+   */
+  "cacheProviderEnabled": false,
+
+  /**
+   * Azure Blob Storage 配置。
+   */
+  "azureBlobStorageConfiguration": {
+    /**
+     * （必需）Azure 存储账户名称。
+     */
+    "storageAccountName": "example",
+
+    /**
+     * （必需）Azure 存储容器名称。
+     */
+    "storageContainerName": "rush-build-cache",
+
+    /**
+     * Azure 存储 SAS 令牌，用于认证。如果未提供，将尝试使用 Azure 默认凭据。
+     */
+    "azureAccessToken": null,
+
+    /**
+     * 如果提供，将添加到容器 URL 的前缀，可用于存储多个仓库的缓存。
+     */
+    "prefixName": null
+  },
+
+  /**
+   * 可选，覆盖缓存条目的默认 TTL（以秒为单位）。
+   * 如果未提供，则永不过期。
+   */
+  "cacheEntryNamePattern": "{projectName}/{projectName}-{phaseName}-{hash}"
+}

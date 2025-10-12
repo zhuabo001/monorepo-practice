@@ -1,0 +1,13 @@
+{
+  "changes": [
+    {
+      "packageName": "monorepo-practice/core",
+      "comment": "Initial setup with Rush version management",
+      "type": "patch"
+    }
+  ],
+  "packageName": "monorepo-practice/core",
+  "email": "example@example.com",
+  "dependentChangeType": "patch",
+  "date": "2025-10-12T19:50:00.000Z"
+}

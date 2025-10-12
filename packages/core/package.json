@@ -5,7 +5,25 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "build": "rollup -c",
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "clean": "rm -rf dist"
+    },
+    "buildOptions": {
+        "name": "MonorepoPracticeCore",
+        "formats": [
+            "esm",
+            "cjs",
+            "iife"
+        ]
+    },
+    "files": [
+        "dist",
+        "src"
+    ],
+    "publishConfig": {
+        "access": "public"
     },
     "keywords": [],
     "author": "",

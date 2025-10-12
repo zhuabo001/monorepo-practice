@@ -1,0 +1,48 @@
+/**
+ * Rush 自定义命令配置。
+ *
+ * 文档: https://rushjs.io/pages/configs/command-line_json/
+ */
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/command-line.schema.json",
+  "commands": [
+    {
+      "name": "test",
+      "commandKind": "bulk",
+      "summary": "运行所有项目的测试",
+      "description": "使用 vitest 运行所有项目的测试套件",
+      "enableParallelism": true,
+      "ignoreDependencyOrder": true,
+      "ignoreMissingScript": false,
+      "allowWarningsInSuccessfulBuild": true
+    },
+    {
+      "name": "clean",
+      "commandKind": "bulk",
+      "summary": "清理所有项目的构建产物",
+      "description": "删除所有项目的 dist 目录和构建缓存",
+      "enableParallelism": true,
+      "ignoreDependencyOrder": true,
+      "ignoreMissingScript": false,
+      "allowWarningsInSuccessfulBuild": true
+    },
+    {
+      "name": "lint",
+      "commandKind": "bulk",
+      "summary": "运行代码检查",
+      "description": "运行 ESLint 和 Prettier 检查代码质量",
+      "enableParallelism": true,
+      "ignoreDependencyOrder": true,
+      "ignoreMissingScript": false,
+      "allowWarningsInSuccessfulBuild": false
+    }
+  ],
+  "parameters": [
+    {
+      "parameterKind": "flag",
+      "longName": "coverage",
+      "description": "生成测试覆盖率报告",
+      "associatedCommands": ["test"]
+    }
+  ]
+}

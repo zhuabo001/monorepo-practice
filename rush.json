@@ -1,0 +1,88 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
+  "rushVersion": "5.140.0",
+  "pnpmVersion": "10.6.1",
+  "nodeSupportedVersionRange": ">=22.14.0",
+  "ensureConsistentVersions": true,
+  "projectFolderMinDepth": 1,
+  "projectFolderMaxDepth": 3,
+  "gitPolicy": {
+    "allowedEmailRegExps": [
+      "^[a-zA-Z0-9._%+-]+@microsoft.com$",
+      "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+    ],
+    "sampleEmail": "example@example.com",
+    "versionBumpCommitMessage": "Bump versions [skip ci]",
+    "changeLogUpdateCommitMessage": "Update changelogs [skip ci]"
+  },
+  "repository": {
+    "url": "https://github.com/zhuabo001/monorepo-practice.git",
+    "defaultBranch": "develop",
+    "defaultRemote": "origin"
+  },
+  "projects": [
+    {
+      "packageName": "monorepo-practice/back-end",
+      "projectFolder": "apps/back-end",
+      "reviewCategory": "production",
+      "shouldPublish": true,
+      "versionPolicyName": "backendPolicy"
+    },
+    {
+      "packageName": "monorepo-practice/front-end",
+      "projectFolder": "apps/front-end",
+      "reviewCategory": "production",
+      "shouldPublish": true,
+      "versionPolicyName": "frontendPolicy"
+    },
+    {
+      "packageName": "monorepo-practice/components",
+      "projectFolder": "packages/components",
+      "reviewCategory": "production",
+      "shouldPublish": true,
+      "versionPolicyName": "componentsPolicy"
+    },
+    {
+      "packageName": "monorepo-practice/core",
+      "projectFolder": "packages/core",
+      "reviewCategory": "production",
+      "shouldPublish": true,
+      "versionPolicyName": "corePolicy"
+    }
+  ],
+  "eventHooks": {
+    "preRushInstall": [],
+    "postRushInstall": [],
+    "preRushBuild": [],
+    "postRushBuild": [],
+    "preRushPublish": [],
+    "postRushPublish": []
+  },
+  "telemetryEnabled": false,
+  "versionPolicies": [
+    {
+      "policyName": "backendPolicy",
+      "definitionName": "lockStepVersion",
+      "version": "1.0.0",
+      "nextBump": "patch"
+    },
+    {
+      "policyName": "frontendPolicy",
+      "definitionName": "lockStepVersion",
+      "version": "1.0.0",
+      "nextBump": "patch"
+    },
+    {
+      "policyName": "componentsPolicy",
+      "definitionName": "lockStepVersion",
+      "version": "1.0.0",
+      "nextBump": "patch"
+    },
+    {
+      "policyName": "corePolicy",
+      "definitionName": "lockStepVersion",
+      "version": "1.0.0",
+      "nextBump": "patch"
+    }
+  ]
+}

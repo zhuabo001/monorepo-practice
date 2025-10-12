@@ -1,0 +1,8 @@
+# 定义 "rush publish" 命令发布的项目。
+#
+# * 默认情况下，如果项目设置了 "shouldPublish": true，则发布项目。
+# * 如果设置了 "include" 和 "exclude" 设置，则按名称过滤项目。
+# * 如果设置了 "versionPolicyNames" 设置，则按版本策略名称过滤项目。
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/publish-settings.schema.json"
+}
