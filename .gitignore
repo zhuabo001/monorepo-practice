@@ -3,7 +3,6 @@ dist
 .vscode
 .env
 .env.test
-INSTRUCTION.md
 
 # Rush 构建缓存
 common/temp
